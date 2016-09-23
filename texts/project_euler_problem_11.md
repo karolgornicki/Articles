@@ -174,4 +174,4 @@ Now, all we have to do is to concatenate all lists and get max value.
 
 This quick example show how easy it it to tackle complexity by organizing your solution using composition of functions where each function is only doing one thing. Moreover, we largely use functions which were supplied with Haskell.
 
-Full Haskell code can be found [here] (http://...)
+Full Haskell code can be found [here] (https://github.com/karolgornicki/Articles/blob/master/src/pe_11.hs)
