@@ -1,6 +1,6 @@
 # Abstract
 
-We present a trivial problem of calculating products in a matrix and finding the largest one. This problem originally featured on Project Euler. Next, we outline a candidate solution in C# which exposes typical drawbacks of straight-forward solution which uses procedural apprach. Then, we explain in detail how we can apprach the same problem using principles of functional programming. In the end we show how functional approach addresses previously highlighted flaws with procedural technique - namely maintainability and readability of the solution. 
+We present a trivial problem of calculating products in a matrix and finding the largest one. This problem originally featured on Project Euler. Next, we outline a candidate solution in C# which exposes typical drawbacks of straight-forward solution which uses procedural approach. Then, we explain in detail how we can approach the same problem using principles of functional programming. In the end we show how functional approach addresses previously highlighted flaws with procedural technique - namely maintainability and readability of the solution. 
 
 Haskell was our language of choice.
 
@@ -45,18 +45,18 @@ Next, in order to calculate products horizontally, vertically or on a diagonal w
 
 The last issue that we can highlight is the fact that this solution is using functions that are specific to this problem - we are not reusing any functions that are available in standard libraries, but instead we are writing everything from scratch. Moreover, it's hard to think of another problem in which we would be able to use our new functions.
 
-# Functional apprach - objectives
+# Functional approach - objectives
 
-So, the question is what alternative apprach we can use that will not only produce correct answer to the problem but also address raised concerns when using procedural apprach:
+So, the question is what alternative approach we can use that will not only produce correct answer to the problem but also address raised concerns when using procedural approach:
 * not using indices 
 * not having guards making sure we are not attempting access outside array boundaries
 * using generic (= multipurpose) functions that are already available in standard libraries rather than writing everything from scratch
 
-Other thing that we want to keep in mind is code readability. How readable our code is has direct impact on how easy it is to maintain it and extend in the future. 
+Other thing that we want to keep in mind is code readability. How readable your code is has direct impact on how easy it is to maintain it and extend in the future. 
 
-# Functional apprach - step by step 
+# Functional approach - step by step 
 
-We'll look at this problem from functional programming perspective, Haskell in particular. The same technique (slightly adjusted) could be applied to F#, Clojure or Scala.
+We'll look at this problem from functional programming perspective, Haskell in particular. The same technique (slightly adjusted) could be applied to F#, Clojure and Scala.
 
 Let's start with data representation. In Haskell we would representat 2D array as list of lists which would have [[Int]] type. Let's say that each sub-list represent a row.
 
@@ -74,7 +74,7 @@ In that case we expect products to be
     
     [24,120,360,840,1680,3024,5040]
     
-Is is clear that 24 = 1 * 2 * 3 * 4 and 120 = 2 * 3 * 4 * 5. So, what we have to create is  alist of lists where each sub-list contains 4 consecutive numbers, like:
+Is is clear that 24 = 1 * 2 * 3 * 4 and 120 = 2 * 3 * 4 * 5. So, what we have to create is a list of lists where each sub-list contains 4 consecutive numbers, like:
 
     [[1,2,3,4],[2,3,4,5],[3,4,5,6],[4,5,6,7],[5,6,7,8],[6,7,8,9],[7,8,9,10]]
     
@@ -105,7 +105,7 @@ All we have to do next, it to take result of this function and transpose it.
 
     transpose . getGroups
     
-This operation produces list of lists. However, not all sub-lists have the sme length. We are only interested in those having 4 elements, so we can apply a filter
+This operation produces list of lists. However, not all sublists have the same length. We are only interested in those having 4 elements, so we can apply a filter
 
     filter (\xs -> length xs == 4) . transpose . getGroups
     
