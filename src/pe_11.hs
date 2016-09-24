@@ -44,9 +44,9 @@ calcDiag2 = calcDiag1 . map reverse
 fs :: [[[Int]] -> [[Int]]]
 fs = [productsHorizontal, productsVertical, calcDiag1, calcDiag2]
 
-calc :: ([[[Int]] -> [[Int]]]) -> Int
-calc = 
-    maximum . concat . map concat . map (\f -> f dss) 
+calc :: [[Int]] -> [[[Int]] -> [[Int]]] -> Int
+calc xss = 
+    maximum . concat . map (concat . (\f -> f xss))
 
 -- CALCULATE...
-maxProduct = calc fs
+maxProduct = calc dss fs
