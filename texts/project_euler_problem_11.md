@@ -224,7 +224,7 @@ Lastly, we apply fs to cal to get the final result
 
     maxProduct = calc dss fs
 
-We can do one more refactoring - tidy up getGroups. We left the function in a pretty messy state, however, we can easily spot that its results looks very similar to what shift function does. Therefore, we can re-define it as
+We can do one more refactoring - tidy up getGroups. We left the function in a pretty messy state, however, we can easily spot that its result looks very similar to what shift function does. Therefore, we can re-define it as
 
     getGroups :: [a] -> [[a]]
     getGroups = 
