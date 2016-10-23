@@ -87,7 +87,7 @@ On the first instance that may look weird that a.txt appears in both categories,
 
 Working directory can be depicted like that 
 
-[GIT-WORKING-DIRECTORY]
+![GIT-WORKING-DIRECTORY](https://github.com/karolgornicki/Articles/blob/master/img/git_tutorial/three_states.jpg)
 
 These are the three states: working directory, staging, and repository.
 
@@ -113,6 +113,6 @@ In order to see unstaged changes to a.txt run
     
 This can be represented on a chart as 
 
-[CHART-DIFF-STAGES]
+![CHART-DIFF-STAGES](https://github.com/karolgornicki/Articles/blob/master/img/git_tutorial/three_states_diff.jpg)
 
 Now you also understand when we were rebasing and had to resolve conflicts we were adding resolved files to staging area and entering a command for Git to continue rebasing. Git was essentially picking up files from staging area in order to make a new commit. Remember, during rebasing Git doesn't move commits, but it actually creates a completely new ones (only changes made to files are the same + your conflict resolutions). 
