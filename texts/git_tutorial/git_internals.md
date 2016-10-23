@@ -109,7 +109,7 @@ The output
     
 At the very bottom we can see the description that we gave to that commit when we created it. It also has an information about committer and author. Lastly we see 2 entries, parent and tree. However, they are  different than all other entries. Instead of having any infromation they reference other files (by their IDs). If we look carefully we notice that the 40-character long ID next to parent is exactly the same as ID of the first commit. This tells Git what was the previous state (the previous commit) of our files. Every commit (except from the first commit) has at least one parent. We'll talk later when a commit can have multiple parents. To visually represent this notion you can think that each commit has a pointer to their parent commit - the one that happen before. This creates a directed graph.
 
-[PICTURE-2-COMMITS]
+![PICTURE-2-COMMITS](https://github.com/karolgornicki/Articles/blob/master/img/git_tutorial/first_two_commits.jpg)
 
 The last thing that must discuss here is tree entry. This entry points to the state of our files. So let's see what's in it. Git allows us to interrogate all of its files, so we can use exactly the same command to inspects its content.
 
@@ -128,7 +128,7 @@ Git stores the entire content of that file (at the time of the snapshot), not ju
 
 The picture below visualizes how our repository could be represented.
 
-[PICTURE-GIT-COMMITS-AND-FILES]
+![PICTURE-GIT-COMMITS-AND-FILES](https://github.com/karolgornicki/Articles/blob/master/img/git_tutorial/commit_with_details.jpg)
 
 During the evolution of your repository Git simply grows its files representing various objects. This is essentially Git's database storing history of everything that happened in your repo. 
 
@@ -253,7 +253,7 @@ It prints
 
 Our repository can be depicted as a graph 
 
-[PICTURE-REPO-GRAPH]
+![PICTURE-REPO-GRAPH](https://github.com/karolgornicki/Articles/blob/master/img/git_tutorial/repository_with_experiment.jpg)
 
 In the next section we will show how we can join branches (Git calls it merging), but before that we have to revisit the checkout command. We said that it tells Git on which branch we want to work (it updates HEAD file to point to the branch selected by us). Obviously we can have more than one branch, so what exactly happens when we switch branches. Let's to the experiement. At first, let's print the content of a.txt (tail prints the last 10 lines of a file).
     
