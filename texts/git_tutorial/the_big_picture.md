@@ -20,17 +20,17 @@ The idea of VCS doesn't enforce one particular way of working. Each projects is 
 
 **Centralized** In centralized workflow we have an official repository. It's goal is to provide one focal point from where all developers in the team take the latest code. Every developer subscribes to the official repository - creates a copy on their PC, makes changes locally and then pushes them to the official repository. Once these changes are in the official repository they become visible to all other developers.
 
-[PICTURE-CENTRALIZED-WORKFLOW] 
+![PICTURE-CENTRALIZED-WORKFLOW](https://github.com/karolgornicki/Articles/blob/master/img/git_tutorial/cenralized_workflow.jpg)
 
 **Distributed** In centralized workflow we had only one repository to which developers subscribe. In distributed workflow we have many. It usually suits large projects with large number of contributors. Two workflows worth examining are the ones used by GitHub and Linux communities. 
 
 In GitHub we usually have one official repository. Developers can fork it - create a copy of this repository (which is publically available) which belongs to this developer. They as well as other people can contribute to this forked repository (from their local copies which subscribe to them). Once their project is completed (eg development of a new feature) they can request the official repository to include their changes into the official code (it's usually called creating a pull request and it's often done via some integration repository in which others can validate that new changes are well integrated with the larger system). Picture below illustrates it. 
 
-[PICTURE-GITHUB-WORKFLOW]
+![PICTURE-GITHUB-WORKFLOW](https://github.com/karolgornicki/Articles/blob/master/img/git_tutorial/github_workflow.jpg)
 
 Linux kernel is one of the largest projects and over time it developers its own workflow with lieutenants. Each lieutenant is responsible for integrating changes from a particular area of larger system, and later promoting them to dictator who has a final say what goes into the official repository. Below picture depicts this workflow. 
 
-[PICTURE-LINUX-WORKFLOW]
+![PICTURE-LINUX-WORKFLOW](https://github.com/karolgornicki/Articles/blob/master/img/git_tutorial/linux_workflow.jpg)
 
 ##Git approach 
 
