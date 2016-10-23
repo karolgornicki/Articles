@@ -30,7 +30,7 @@ Quick look on log of our repository
     
 Our repository can be depicted as 
 
-[PICTURE-REPOSITORY]
+![PICTURE-REPOSITORY](https://github.com/karolgornicki/Articles/blob/master/img/git_tutorial/feature1_before_merge.jpg)
 
 Let's have a log at the output printout (later we will compare with after the merge).
 
@@ -60,7 +60,7 @@ The output of this command is:
     
 First we have yo understand how Git is merging. This is how Git appraches a merge scenario. Git looks at the 2 branches - each pointing to a commit. In our case master points to da9e20e and feature/1 points to 140c07a. Since our commit history is essentially a graph (as we have seen earlier) Git finds the first common ancestor for both commits. In this case the first common ancestor for the 2 commits is da9e20e. This clearly says to Git that there was no development on master since we created a new branch and in order to incorporate changes from feature/1 branch all it has to do is update master branch pointer to point to 140c07a. This operation is called fast-forward, and it's exactly what Git reports in the printout after we run merge command. After running this command our repository is depicted below. 
 
-[PICTURE-REPO-AFTER-MERGE]
+![PICTURE-REPO-AFTER-MERGE](https://github.com/karolgornicki/Articles/blob/master/img/git_tutorial/feature1_after_merge.jpg)
 
 Now we can delete feature/1 branch (which means that we are going to delete a pointer to the last commit) because it master and feature/1 are now pointing to the same object.
 
