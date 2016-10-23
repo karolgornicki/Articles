@@ -4,7 +4,7 @@ This page is a collection of various work I've done.
 
 ## Git tutorial 
 
-This tutorial is designed to make you a power user of Git. It takes a rather non-traditional apprach compare to other tutorials. We believe you can truly understand Git by learning its internal mechanics in the first place. Then you can apply this knowledge in various use cases. This way you can always make well informed decision rather than relying on best practices without really knowing what Git does under the hood.
+This tutorial is designed to make you a power user of Git. It takes a rather non-traditional approach compare to other tutorials. We believe you can truly understand Git by learning its internal mechanics in the first place. Then you can apply this knowledge in various use cases. This way you can always make well informed decision rather than relying on best practices without really knowing what Git does under the hood.
 
 * [**Introduction**](https://github.com/karolgornicki/Articles/blob/master/texts/git_tutorial/introduction.md) - why should you care?
 * [**The big picture**](https://github.com/karolgornicki/Articles/blob/master/texts/git_tutorial/the_big_picture.md) - what is it and what problems does it solve?
