@@ -41,3 +41,9 @@ After completion of the tutorial you should be comfortable working with R and RS
 * [**Lecture #10 - Practical machine learning**](texts/data_science/lecture_10_practical_machine_learning.md)
 * [**Lecture #11 - Predicting titanic survivors using machine learning**](texts/data_science/lecture_11_predicting_titanic_survivors_using_machine_learning.md)
 * [**References**](texts/data_science/references.md)
+
+## Functional thinking 
+
+*This section is under construction.*
+
+* [Problem - Largest product in a grid](texts/project_euler_problem_11.md)
