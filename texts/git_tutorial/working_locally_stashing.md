@@ -145,3 +145,9 @@ Our working directory is updated
 And our stash is empty
 
     $ git stash list 
+    
+Let's just quickly clean up by discarding all our changes. 
+
+    $ git checkout a.txt 
+    $ git checkout master 
+    $ git branch -d feature/6

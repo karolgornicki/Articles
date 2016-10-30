@@ -15,6 +15,7 @@ This tutorial is designed to make you a power user of Git. It takes a rather non
  * [**Patching**](texts/git_tutorial/working_locally_patching.md)
  * [**Undo**](texts/git_tutorial/working_locally_undo.md)
  * [**Stashing**](texts/git_tutorial/working_locally_stashing.md)
+ * [**Exploring history**](texts/git_tutorial/working_locally_exploring_history.md)
 * Working with Git remotely - series of use cases how to work with a remote repository
  * [**Cloning**](texts/git_tutorial/working_remotely_cloning.md)
  * [**Receiving updates**](texts/git_tutorial/working_remotely_receiving_updates.md)
