@@ -1,4 +1,4 @@
-# Lecture 8: Creative Naïve Predictions
+# Lecture 8: Creating Naïve Prediction Models
 
 ## 1. Task
 
