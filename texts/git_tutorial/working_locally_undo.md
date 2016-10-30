@@ -1,12 +1,12 @@
 # Undo
 
-One more thing before we conclude this section. Say we did something wrong and we want to undo our changes. 
+Say we did something wrong and we want to undo our changes. 
 
 In order to take a file out of staging area run 
 
     $ git reset a.txt 
     
-In order to remove all changes we made to the file
+In order to remove all changes we made to the file run 
     
     $ git checkout -- b.txt
     
@@ -35,3 +35,5 @@ We can see that there are some uncommitted changes to a.txt. If we drill down
 We can see that Git removed the previous commit (in fact the object is kept in .git folder - go to .git folder and try to find this object) but kept all the changes that we previously made in case we wanted to make some quick fix. If you want to discard there changes simply run
 
     $ git checkout -- a.txt 
+    
+Reset command has actually two options --soft and --hard. By default --soft option is applied. It updates HEAD to point to the previous commit and moves all changes to your working directory. On the other hand --hard option will discard them all.

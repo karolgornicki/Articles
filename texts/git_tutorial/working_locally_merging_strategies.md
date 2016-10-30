@@ -1,4 +1,4 @@
-# Branches and merging
+# Branching and merging
 
 In the previous section we explained how branches work. Branch is just a pointer to the commit object - nothing more. Because of that creating branches is cheap and quick. In fact, while working with Git you are going to use them - a lot! 
 

@@ -10,7 +10,7 @@ This tutorial is designed to make you a power user of Git. It takes a rather non
 * [**The big picture**](texts/git_tutorial/the_big_picture.md) - what is it and what problems does it solve?
 * [**Git internals**](texts/git_tutorial/git_internals.md) - how does it work under the hood?
 * Working with Git locally - this series applies use case apprach demonstrating how to use Git
- * [**Branches and merging**](texts/git_tutorial/working_locally_merging_strategies.md)
+ * [**Branching and merging**](texts/git_tutorial/working_locally_merging_strategies.md)
  * [**Three states**](texts/git_tutorial/working_locally_three_states.md)
  * [**Patching**](texts/git_tutorial/working_locally_patching.md)
  * [**Undo**](texts/git_tutorial/working_locally_undo.md)
