@@ -20,9 +20,9 @@ So, our new design would say that we want to calculate a fixed point for that pa
 
     let fixedPoint f start =
         let rec loop oldValue newValue =
-                if (isCloseEnough oldValue newValue)
-                then newValue
-                else loop newValue (f newValue)
+            if (isCloseEnough oldValue newValue)
+            then newValue
+            else loop newValue (f newValue)
         loop start (f start)
 ```
 
@@ -60,7 +60,7 @@ It is actually defined as
 ```fsharp
     let add =
         fun x ->
-                fun y -> x + y
+            fun y -> x + y
 ```
 
 Furthermore, the signature of our add function (however it is defined in our code) is

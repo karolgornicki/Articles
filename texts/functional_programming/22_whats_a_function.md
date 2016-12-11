@@ -20,11 +20,11 @@ Functions have 3 important properties:
 These properties may seem like something utterly obvious, but I’m sure on many occasions we all witnessed functions which violate them. Just as a demo, let’s look at the below C# function
 
 ```csharp
-    int global = 0;
-    int addToGlobaI (int x)
+    int globalVar = 0;
+    int AddToGlobal (int x)
     {
-        global += x;
-        return global;
+        globalVar += x;
+        return globalVar;
     }
 ```
 

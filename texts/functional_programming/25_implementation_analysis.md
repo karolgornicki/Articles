@@ -44,10 +44,10 @@ First function:
 Second function 
 
     add’ 2 3 
-    Inc (add’ 1 3)
-    Inc (inc (add’ 0 3))
-    Inc (inc 3)
-    Inc 4
+    inc (add’ 1 3)
+    inc (inc (add’ 0 3))
+    inc (inc 3)
+    inc 4
     5
 
 In both cases we arrive with the same results, but the ways in which function computes are very different . The first implementation of add can produce result in 4 steps. Another thing to notice is that during each step it needs to know the function (add) and its 2 arguments (that’s all). We call that functions computes in constant space O(1) - it always require the same amount of space on stack. Complexity is O(N) - one number must be reduced to 0.
