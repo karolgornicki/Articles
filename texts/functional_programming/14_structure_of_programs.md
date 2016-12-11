@@ -19,9 +19,9 @@ Note the "=" after module name when we declare a namespace, it’s necessary.
 Let’s now define a function. Functions are one of the important elements of this language.
 
 ```fsharp
-    Namespace Demo 
+    namespace Demo 
 
-    Module Functions = 
+    module Functions = 
 
         let add x y = 
             x + y 
