@@ -11,7 +11,7 @@ To solve this problem we can use a very simple algorithm which is attributed to 
 * Make a guess 
 * Check if your guess is good enough
   * If yes then return the guess 
-  * If no then improve your guess and go back to #2.
+  * If no then improve your guess and check again
 
 So, how we can improve our guess? One way is to take an average of our guess, and fraction x over guess. This gives us a better estimate of our target, and actually converges quite quickly.
 
@@ -22,15 +22,15 @@ So, how we can improve our guess? One way is to take an average of our guess, an
 It’s a pretty simple algorithm to let’s write it up. At first let’s do it in C#, and then let’s try to see how it can be changed into F# code. 
 
 ```csharp
-    double sqrt (double x) 
+double sqrt (double x) 
+{
+    double guess = 1;
+    while (Math.Abs(guess * guess - x) >= 0.001)
     {
-        double guess = 1;
-        while (Math.Abs(guess * guess - x) >= 0.001)
-        {
-            guess = (guess + x/guess) / 2;
-        }
-        return guess;
+        guess = (guess + x/guess) / 2;
     }
+    return guess;
+}
 ```
 
 That’s a pretty much 1-1 matching with our algorithm from the description. As an initial guess we can take 1, though, any other number would be fine too. 
@@ -38,7 +38,7 @@ That’s a pretty much 1-1 matching with our algorithm from the description. As 
 Let’s analyze this short code. There are few problems with it:
 
 * While statement - in the introduction we said that everything is a function and that there is no flow-control statements. 
-* We use a variable to store intermediate states of our calculations, which value changes over the lifetime of the function.
+* We use a variable (guess) to store intermediate states of our calculations, which value changes over the lifetime of the function.
 * This function defines many subtasks at the same time (it’s not criticism of a language, just bad design on my part - which we will shortly improve):
   * It defines how to check if a guess is good enough.
   * It defines how to improve the guess.
@@ -82,17 +82,23 @@ So now we have only one problem left - this function defines few different jobs.
 The final outcome would look like this. 
 
 ```fsharp
-    let isGoodEnough (guess:double) (x:double) =
-        Math.Abs(guess * guess - x) >= 0.001
+let isGoodEnough (guess:double) (x:double) :bool =
+    Math.Abs(guess * guess - x) >= 0.001
 
-    let improveGuess guess x =
-        (guess + x/guess)/2.0
+let improveGuess (guess:double) (x:double) :double =
+    (guess + x/guess)/2.0
 
-    let rec whileLoop (guess:double) (x:double) :double =
-        if isGoodEnough guess x
-        then whileLoop (improveGuess guess x) x
-        else guess
+let rec whileLoop (guess:double) (x:double) :double =
+    if isGoodEnough guess x
+    then whileLoop (improveGuess guess x) x
+    else guess
 
-    let sqrt x =
-        whileLoop 1.0 x
+let sqrt (x:double) :double =
+    whileLoop 1.0 x
 ```
+
+Although F# is able to infer types in most cases, it's a good pracice to explicitly provide them. It increases the readability of your code. In the code above, after defining all arguments we always have :[type] - this denotes the return type of the whole function.
+
+As a rule of thumb, if it's practical and improves readability, include explicit type definitions.
+
+Next: [Functions are data](24_functions_are_data.md)

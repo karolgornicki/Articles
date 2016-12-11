@@ -7,3 +7,5 @@ We will start with quick introduction to F# - the basics everyone must know.
 The next two blocks break down the essence of functional programming - functions and data structures. Each of two parts is made up of few essays, each containing a problem to solve and code solution. 
 
 We will close this series with essays demonstrating how to solve more complicated problems - from start to end. Each problem is analyzed - based on that we make decision how our algorithm must be designed, how does it shape our data structures. We end each essay with full solution.
+
+Next: [By the end ...](04_by_the_end.md)

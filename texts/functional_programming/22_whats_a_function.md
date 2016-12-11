@@ -7,8 +7,8 @@ At the core of functional programming are functions. For the purpose of this ser
 This sounds pretty obvious so let’s create a function which adds 2 numbers.
 
 ```fsharp
-    let add x y =
-        x + y 
+let add x y =
+    x + y 
 ```
 
 Functions have 3 important properties:
@@ -17,23 +17,26 @@ Functions have 3 important properties:
 * They **don’t change arguments** - if we look at function add which takes 2 arguments, x and y, it doesn’t change the value of any of them. Instead it creates a new value representing a sum of x and y.
 * They give **names** to processes.
 
-These properties may seem like something utterly obvious, but I’m sure on many occasions we all witnessed functions which violate them. Just as a demo, let’s look at the below C# function
+These properties may seem like something utterly obvious, but I’m sure on many occasions we all witnessed functions which violate them. Just as a demo, let’s look at the below C# code
 
 ```csharp
-    int globalVar = 0;
-    int AddToGlobal (int x)
-    {
-        globalVar += x;
-        return globalVar;
-    }
+int globalVar = 0;
+
+int AddToGlobal (int x)
+{
+    globalVar += x;
+    return globalVar;
+}
 ```
 
-This function adds x to the global variable and then returns the current value of global. Obviously, if we call this function few times with an argument other than 0 each time we will get a different result. This kind of behavior can be frequently seen in procedural languages, like C# and it has a name - side effect. 
+This function adds x to the globalVar variable and then returns the current value of global. Obviously, if we call this function few times with an argument other than 0 each time we will get a different result. This kind of behavior can be frequently seen in procedural languages, like C# and it has a name - side effect. 
 
-One may ask - what’s the problem with that? After all, the name of the function says it’s updating global. Well, yes and no. In this example it is pretty obvious what this function does, but just imagine a more complicated example. You as a developer, should be able to read the code and know what it does - you should now be able to debug it just to find out what it’s doing. Debugging is the last resource. 
+One may ask - what’s the problem with that? After all, the name of the function says it’s updating global. Well, yes and no. In this example it is pretty obvious what this function does, but just imagine a more complicated example. You as a developer, should be able to read the code and know what it does - you should not be force to debug it just to figure out what the code is doing. Debugging is the last resource. 
 
-This leads us to another problem with this function - it relies on some global variable. In our example, out global variable is only updated by this one function. However, we could easily write other functions that can also update the value of that variable - this would make it even harder to deduce from the code how the program behaves, not to mention asses if it’s the correct behavior. 
+This leads us to another problem with this function - it relies on some global variable. In this example, our global variable is only updated by this one function. However, we could easily write other functions that can also update the value of that variable - this would make it even harder to deduce from the code how the program behaves, not to mention asses whether it’s a correct behavior. 
 
-This is the root cause of many bugs (the other one is null) and functional languages either disallow this behavior altogether, or at least make it quite cumbersome to write code like that (in case of hybrid languages like F#). 
+This is the root cause of many bugs (the other major issue with languages like C# is null - null value should never be allowed) and functional languages either disallow this behavior altogether, or at least make it quite cumbersome to write code like that (in case of hybrid languages like F#). 
 
-The last property is usually undermined but it’s actually quite fundamental - functions give names to processes. This allows us to be more declarative in our programs - you simply read the name of the function and instantly know what it’s doing. Thus it is very important to give meaningful names. Comments are also helpful, especially to explain business logic. 
+The last property is usually undermined but it’s actually quite fundamental - functions give names to processes. This allows us to be more declarative in our programs - you simply read the name of the function and instantly know what it’s doing. Thus, it is very important to give meaningful names. Comments are also helpful, especially to explain business logic (why this code is doing something). 
+
+Next: [Problem: Square root algorithm](23_problem_sqrt_algorithm.md)
