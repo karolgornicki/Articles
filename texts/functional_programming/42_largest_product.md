@@ -127,7 +127,7 @@ Now we have a function. Newcomers to F# might find it strangely looking, so let�
 ```fsharp
 let groupByN n xs =
     xs
-|> getGroups
+    |> getGroups
     |> transpose
     |> List.filter (fun (xs:list<'a>) -> List.length xs = n)
 ```
