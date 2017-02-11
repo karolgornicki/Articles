@@ -27,7 +27,7 @@ let getVerticalProducts =
     transpose >> getHorizontalProducts
 
 let shift xss = 
-    zipWith (fun (x, xs) -> List.skip x xs) [0..10] xss
+    zipWith (fun (x, xs) -> List.skip x xs) [0..List.length xss] xss
  
 let calcDiag1 = 
     groupByN 4 
@@ -38,9 +38,11 @@ let calcDiag2 =
     List.map List.rev
     >> calcDiag1
 
-let productsHorizontal = getHorizontalProducts
+let productsHorizontal = 
+    getHorizontalProducts
 
-let productsVertical = transpose >> getHorizontalProducts
+let productsVertical = 
+    transpose >> getHorizontalProducts
 
 let fs = [productsHorizontal; productsVertical; calcDiag1; calcDiag2]
 

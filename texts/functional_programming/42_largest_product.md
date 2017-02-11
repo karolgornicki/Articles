@@ -1,6 +1,6 @@
 #Largest Product (function composition) 
 
-In this essay we will solve a problem of finding the largest product in a matrix to which a solution is a great example of function composition. It demonstrates how it can be used and what are its benefits. This puzzle originally featured on Project Euler, which we would encourage you to check for more challenging puzzles - especially when you’re learning a new language. 
+In this essay we will solve a problem of finding the largest product in a matrix. This solution demonstrates how we to use function composition in practice and highlight its key benefits. This puzzle originally featured on Project Euler. If you just starting to learn a new language it is a great source of puzzles and we would strongly encourage you to try solving few. You learn the most when you are testing yourself - it's the easiest way to find out what you undrestood well, and where are the gaps that yoou have to fill in.
 
 ##The problem
 
@@ -29,21 +29,21 @@ We are given a matrix, 20 x 20, populated with integer values. The goal is to fi
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48
 ```
 
-Original description: [LINK](https://projecteuler.net/problem=11)
+Original description of this puzzle can be found [**here**](https://projecteuler.net/problem=11).
 
 ##Solution - intuitive approach
 
-The puzzle is quite simple, and if you are coming from C# background you probably already in your head have a solution. You are probably thinking about 2 “for” loops to iterate through the grid, and at each point we are calculating product of this and the next 3 elements horizontally, vertically, and on 2 diagonals. Obviously we will have to add few “if” statements to make sure we won’t try to access outside of our arrays. And we’ll keep track of the largest product so far in some variable, which value will mutate over the lifetime of our program. 
+The puzzle is quite simple, and if you are coming from C# background you probably already have an idea how to apprach it. You are probably thinking about 2 "for" loops to iterate through the grid, and at each point you are calculating product of this and the next 3 elements horizontally, vertically, and on 2 diagonals. Obviously, you will have to add few "if" statements to make sure you won’t try to access outside of our arrays. Lastly, you’ll keep track of the largest recent product in some variable to report at the end. 
 
 This solution will work but it has drawbacks, namely:
 
 * We access elements of the array using indices, which makes code, over time, difficult to understand.
-* We add “if” guards to make sure we’re not attempting to access indices outside of arrays. This adds complexity to our code.
-* We mutate variable which stores the largest product. In a simple example like this it’s relatively easy to manage, but generally speaking mutable variables are source of complexity. Very often you are forced to debug the program in order to truly understand what it’s doing only because its internal state is changing so often. 
+* We add "if" guards to make sure we’re not attempting to access indices outside of arrays. This adds complexity to our code.
+* We have a mutable variable which stores the largest product. In a simple example like this it’s relatively easy to manage, but generally speaking mutable variables are source of complexity. Very often you are forced to debug the program in order to truly understand what it’s doing only because its internal state is changing so often. 
 
 ##Solution - functional approach 
 
-We can approach this puzzle employing principles of functional programming and design solution which is readable and free of any “if” guards. To people who are just starting with functional programming it might look a bit strange at first, but that’s only because we’re trying to solve a problem in a new and somewhat different way.
+We can approach this puzzle employing principles of functional programming and design solution which is readable and free of any "if" guards. People who are just starting with functional programming might find it a bit strange at first, but that’s only because we’re trying to solve a problem in a new, and somewhat different, way.
 
 Let’s start with data representation. It’s typical in any functional language to represent matrices as lists of list - single list represents a row. List of lists makes a matrix. Using lists is convenient for processing. In our case that would be
 
@@ -62,7 +62,7 @@ let testData = [1; 2; 3; 4; 5; 6; 7; 8; 9; 10]
 In that case we expect products to be
 
 ```
-[24;120; 360; 840; 1680; 3024; 5040]
+[24; 120; 360; 840; 1680; 3024; 5040]
 ```
 
 Is is clear that 24 = 1 * 2 * 3 * 4 and 120 = 2 * 3 * 4 * 5. So, we have to create isa list of lists where each sublist contains 4 consecutive numbers, like:
