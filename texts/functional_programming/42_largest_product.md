@@ -71,7 +71,7 @@ Is is clear that 24 = 1 * 2 * 3 * 4 and 120 = 2 * 3 * 4 * 5. So, we have to crea
 [[1; 2; 3; 4]; [2; 3; 4; 5]; [3; 4; 5; 6]; [4; 5; 6; 7]; [5; 6; 7; 8]; [6; 7; 8; 9]; [7; 8; 9; 10]]
 ```
 
-Then each sublist can be mapped using product function. Thus, the next question is how we can produce this list of lists. We can observe that those sublists can be re-arranged:
+Then each sublist can be mapped using product function. Thus, the next question is - how can we produce this list of lists? We can observe that those sublists can be re-arranged:
 
 ```
 [1; 2; 3; 4];
@@ -95,11 +95,11 @@ let getGroups (xs:list<'a>) :list<list<'a>> =
     [xs; xs1; xs2; xs3]
 ```
 
-Yes, it can be written in a much smarter way, but for now let's keep things as simple as possible. We can later refactor it. We also applied previously mentioned technique - wishful thinking - and used “drop” function. It’s just naturally fits our function.
+Yes, it can be written in a much smarter way, but for now let's keep things as simple as possible. We can later refactor it. We also applied previously mentioned technique - wishful thinking - and used "drop" function. It’s just naturally fits our function.
 
-"drop" function removes number of elements from the list, starting from the head. In fact it’s very similar to List.skip with one distinction - List.skip throws an exception when called List.skip 1 [] - “drop” function on the other hand will return empty list. We are going to skip the implementation of typical utility functions as we want to focus on the core idea of calculating products. Source code of this function and few others is available HERE. 
+"drop" function removes number of elements from the list, starting from the head. In fact it’s very similar to List.skip with one distinction - List.skip throws an exception when called List.skip 1 [] - “drop” function on the other hand will return an empty list. We are going to skip the implementation of typical utility functions as we want to focus on the core idea of calculating products. Source code of this function and few others is available [**here**](https://github.com/karolgornicki/Articles/blob/master/src/ProjectEuler/ProjectEuler/Utilities.fs). 
 
-All we have to do next, it to take result of this function and transpose it. Unfortunately F# doesn’t supply this function either, so we wrote our own implementation.Rather than apply argument to getGroups and then pass its result to transpose we can compose these 2 functions - just like in maths: g(f(x)) ⇔ (g . f) (x) which in F# translates into f >> g
+All we have to do next is to take result of this function and transpose it. Unfortunately F# doesn’t supply this function either, so we wrote our own implementation. Rather than apply argument to getGroups and then pass its result to transpose we can compose these 2 functions - just like in maths: g(f(x)) ⇔ (g . f) (x) which in F# translates into f >> g
 
 ```fsharp
 getGroups >> transpose
@@ -122,7 +122,7 @@ let groupByN n =
     >> List.filter (fun (xs:list<'a>) -> List.length xs = n)
 ```
 
-Now we have a function. Newcomers to F# might find it strangely looking, so let’s review it. We define a name “groupByN”, using let keyword, with which we bind a function that takes a single argument - n - and returns a new function which is a composition of 3 other functions. Alternatively this function could looks like this.
+Now we have a function. Newcomers to F# might find it strangely looking, so let’s review it. We define a name "groupByN", using let keyword, with which we bind a function that takes a single argument - n - and returns a new function which is a composition of 3 other functions. Alternatively this function could look like this.
 
 ```fsharp
 let groupByN n xs =
@@ -151,7 +151,7 @@ Next, let's calculate vertical products in our matrix. Actually, it's very easy.
 
 ```fsharp
 let getVerticalProducts =
-    Utilities.Functions.transpose >> getHorizontalProducts 
+    transpose >> getHorizontalProducts 
 ```
 
 This is very important aspect of programming, pretty much in any modern language. Functions are reusable. What functional programming in particular makes very convenient is glueing functions together, and thus creating new functions, with very little syntax. 
@@ -201,10 +201,10 @@ let calcDiag1 =
     >> List.concat
 ```
 
-At this point we can make one observation
+At this point we can make one observation. This practice in general is called equational reasoning. It can be used to optimize your code by analyzing it as combination of mathematical functions. This technique is also used to prove the correctness of the function. It must be said, that this requires that our functions are pure - meaning they have no side effects.
 
 ```
-map (f . g) = map f . map g
+map (f >> g) = (map f) >> (map g)
 ```
 
 So our simplified function will now look like this
@@ -247,4 +247,4 @@ Lastly, we apply fs to calc to get the final result
 let maxProduct = calc data fs 
 ```
 
-The source code can be found [**HERE**](https://github.com/karolgornicki/Articles/blob/master/src/ProjectEuler). Remember, before you run the script, build the solution first. Code in the script references functions which are defined in a source file.
+The source code can be found [**here**](https://github.com/karolgornicki/Articles/blob/master/src/ProjectEuler). Remember, before you run the script, build the solution first. Code in the script references functions which are defined in a source file.
