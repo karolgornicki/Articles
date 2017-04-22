@@ -52,6 +52,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="StackQueue\QueueTests.cs" />
+    <Compile Include="StackQueue\StackTests.cs" />
     <Compile Include="UnionFind\ImprovedUnionFindTests.cs" />
     <Compile Include="UnionFind\UnionFindTests.cs" />
     <Compile Include="UnionFind\NaiveUnionFindTests.cs" />
