@@ -52,6 +52,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Sorts\InsertSortTests .cs" />
+    <Compile Include="Sorts\SelectionSortTests.cs" />
+    <Compile Include="Sorts\SortAlgoTester.cs" />
+    <Compile Include="Sorts\ShufflingTests.cs" />
+    <Compile Include="Sorts\UtilsTests.cs" />
     <Compile Include="StackQueue\QueueTests.cs" />
     <Compile Include="StackQueue\StackTests.cs" />
     <Compile Include="UnionFind\ImprovedUnionFindTests.cs" />

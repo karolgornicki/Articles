@@ -40,6 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Sorts\InsertSort.cs" />
+    <Compile Include="Sorts\SelectionSort.cs" />
+    <Compile Include="Sorts\Shuffling.cs" />
+    <Compile Include="Sorts\Utils.cs" />
     <Compile Include="StackQueue\Node.cs" />
     <Compile Include="StackQueue\Queue.cs" />
     <Compile Include="StackQueue\Stack.cs" />
