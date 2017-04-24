@@ -12,7 +12,7 @@ In particular, our algorithms must cope with edge cases, ie extreme use cases. F
 
 ## Utility functions 
 
-Before we start implement any functions we will need few utility functions. In our Goals section we mentioned that we must be able to handle any array of types that implement IComparable. .NET introduces an interface (IComparable)[https://msdn.microsoft.com/en-us/library/system.icomparable(v=vs.110).aspx] which declares a function which is used for comparison - CompareTo(o). Briefly, it returns value less than zero, zero or greater than zero which represents relations between the 2 objects.
+Before we start implement any functions we will need few utility functions. In our Goals section we mentioned that we must be able to handle any array of types that implement IComparable. .NET introduces an interface [IComparable](https://msdn.microsoft.com/en-us/library/system.icomparable(v=vs.110).aspx) which declares a function which is used for comparison - CompareTo(o). Briefly, it returns value less than zero, zero or greater than zero which represents relations between the 2 objects.
 
 It will be very useful for us to have IsLess function that takes 2 elements, evaluates them and returns a bool value. The challenge is that we want this function to be able to handle any type. In order to meet this requirement all we have to do is to declare its arguments as IComparable. The implementation of this function can look like this. 
 
@@ -138,4 +138,4 @@ public static T[] Shuffle<T>(T[] xs)
 
 This section described few very basic sorting algorithms. They illustrate that the problem can be solved in just few lines. Performance of described sorting algorithms is unacceptable, though. Algorithms of quadratic complexity simply don’t scale up. We need to develop algorithms which are at worst linearithmic, meaning O(NlgN). 
 
-
+Full code can be found [here](https://github.com/karolgornicki/Articles/blob/master/src/Algorithms/Algorithms/Sorts).
