@@ -82,37 +82,51 @@ So in our example, in order to sort array we have to sort 2 halves, each T(N/2),
 
 So, 
 
+```
 T(N) = T(N/2) + T(N/2) + N
+```
 
 Which is 
 
+```
 T(N) = 2T(N/2) + N
+```
 
 We can divide each side by N
 
+```
 T(N)/N = 2T(N/2)/N + N/N
+```
 
 Which is 
 
+```
 T(N)/N = T(N/2)/(N/2) + 1
+```
 
 Now we can observe, that we can apply the same to T(N/2)/(N/2) which would lead to 
 
+```
 T(N)/N = T(N/4)/(N/4) + 1 + 1
+```
 
 We would continue this process, until we would arrive, on the right-hand side, with N/N. This assumes that N is a power of 2 - which gives us upper bound algorithm’s complexity. 
 
 Eventually 
 
+```
 T(N)/N = T(N/N)/(N/N) + 1 + … + 1
+```
 
 T(N/N)/(N/N) = 1, so the question is how many 1s do we have to sum. Each time when we divided by 2 we “appended” +1 to our formula. Given that N was power of 2 in the first place we can see that +1 was appended lgN times (that is logarithm with base 2). 
 
 In conclusion,
 
+```
 T(N)/N = 1 + lgN
 
 T(N) = N + NlgN
+```
 
 Which in big-O notation is O(NlgN).
 
