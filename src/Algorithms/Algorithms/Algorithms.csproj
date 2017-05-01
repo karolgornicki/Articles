@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="Sorts\InsertSort.cs" />
     <Compile Include="Sorts\MergeSort.cs" />
+    <Compile Include="Sorts\QuickSort.cs" />
+    <Compile Include="Sorts\QuickSort3Way.cs" />
     <Compile Include="Sorts\SelectionSort.cs" />
     <Compile Include="Sorts\Shuffling.cs" />
     <Compile Include="Sorts\Utils.cs" />

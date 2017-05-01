@@ -53,6 +53,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Sorts\InsertSortTests .cs" />
+    <Compile Include="Sorts\QuickSort3WayTests.cs" />
+    <Compile Include="Sorts\QuickSortTests.cs" />
     <Compile Include="Sorts\SelectionSortTests.cs" />
     <Compile Include="Sorts\SortAlgoTester.cs" />
     <Compile Include="Sorts\ShufflingTests.cs" />
