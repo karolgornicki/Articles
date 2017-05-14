@@ -52,6 +52,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="PriorityQueue\MaxPQTests.cs" />
+    <Compile Include="PriorityQueue\HeapSortTests.cs" />
     <Compile Include="Sorts\InsertSortTests .cs" />
     <Compile Include="Sorts\QuickSort3WayTests.cs" />
     <Compile Include="Sorts\QuickSortTests.cs" />

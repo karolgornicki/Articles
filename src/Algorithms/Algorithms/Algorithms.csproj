@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PriorityQueue\HeapSort.cs" />
+    <Compile Include="PriorityQueue\MaxPQ.cs" />
     <Compile Include="Sorts\InsertSort.cs" />
     <Compile Include="Sorts\MergeSort.cs" />
     <Compile Include="Sorts\QuickSort.cs" />
