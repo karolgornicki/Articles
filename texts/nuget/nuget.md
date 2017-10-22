@@ -104,7 +104,7 @@ Since packages are managed on a project basis, when you installing packages you 
 
 If you'd like to learn more what commands are available head to https://docs.microsoft.com/en-us/nuget/tools/package-manager-console 
 
-## Where Packages Are Coming From?
+## Where Are Packages Coming From?
 
 When we were adding XUnit to our project as a dependency, we set source to "nuget.org". This is a public gallery to which everyone can upload their own packages and others can start using it. The service is completely free of charge. You can browse these projects either using Visual Studio tools (UI or console) or on their webpage, https://www.nuget.org/ 
 
@@ -272,7 +272,7 @@ Most likely you'll get some warnings but they are easy to fix.
 ### How to Create a Symbol Package? (So the User Can Debug It)
 
 ```
-Run NuGet.exe pack -symbols 
+NuGet.exe pack -symbols 
 ```
 
 ### How to Create Package that Modifies Existing Files in the Project? 
