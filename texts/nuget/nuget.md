@@ -1,4 +1,4 @@
-# NuGet
+# Introduction to NuGet
 
 ## Introduction
 
